@@ -15,15 +15,22 @@ public class P002 {
 	
 	public static void main(String[] args) {
 		
-		System.out.println( problem2(0, 0, 1) );
+		System.out.println( sumOfEvenFibonacciNumbers(0, 0, 1) );
 		
 	}
 	
-	private static int problem2 (int sum, int last, int actual){
+	/**
+	 * Sums all even Fibonacci numbers below the constant MAX (included)
+	 * @param sum the sum so far
+	 * @param last the last fibonacci number calculated
+	 * @param actual the actual fibonacci number
+	 * @return The sum of all even Fibonacci numbers until MAX (four million)
+	 */
+	private static int sumOfEvenFibonacciNumbers (int sum, int last, int actual){
 		if(actual > MAX){
 			return sum;
 		}
-		return problem2( ((isEven(actual))? sum+actual : sum), actual, actual + last );
+		return sumOfEvenFibonacciNumbers( ((isEven(actual))? sum+actual : sum), actual, actual + last );
 	}
 	
 	private static boolean isEven(int a){
