@@ -34,7 +34,7 @@ public class P003 {
 		return findLargestPrimeFactor(maxPrimeFactor, aux+1, numberToTest);
 	}
 
-	private static boolean isPrime(long aux, long numberToTest){
+	public static boolean isPrime(long aux, long numberToTest){
 		if(aux*aux > numberToTest){
 			return true;
 		}
