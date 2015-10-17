@@ -33,12 +33,16 @@ public class P003 {
 		}
 		return findLargestPrimeFactor(maxPrimeFactor, aux+1, numberToTest);
 	}
-
-	private static boolean isPrime(long aux, long numberToTest){
-		if(aux*aux > numberToTest){
-			return true;
-		}
-		return ((numberToTest % aux == 0)? false: isPrime(aux+1, numberToTest) );
+	
+	/**
+	 * Checks if the given number is prime
+	 * @param aux number being verified if is a factor. Should start with 2, since all numbers are divisible by 1
+	 * @param numberToTest given number
+	 * @return
+	 */
+	public static boolean isPrime(long aux, long numberToTest){
+		return (aux*aux > numberToTest) || ((numberToTest % aux != 0) && isPrime(aux+1, numberToTest));
 	}
+	
 	
 }
