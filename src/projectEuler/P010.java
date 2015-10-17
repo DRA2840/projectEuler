@@ -1,5 +1,12 @@
 package projectEuler;
 
+/**
+ * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+ * Find the sum of all the primes below two million.
+ * 
+ * @author Diego (DRA2840)
+ *
+ */
 public class P010 {
 
 	public static void main(String[] args) {
