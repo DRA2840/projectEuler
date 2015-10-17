@@ -13,7 +13,7 @@ package projectEuler;
 public class P009 {
 	
 	public static void main(String[] args) {
-		System.out.println(findAndMultiplyPytagoreanTriplet(1001,1,1));
+		System.out.println(findAndMultiplyPytagoreanTriplet(1000,1,1));
 	}
 	
 	/*
