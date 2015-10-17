@@ -42,10 +42,7 @@ public class P004 {
 	}
 	
 	public static boolean isPalindrome(int a,String number){
-		if(a == number.length()/2){
-			return true;
-		}
-		return (number.charAt(0+a) == number.charAt(number.length()-1-a)) && isPalindrome(a+1, number);
+		return (a >= number.length()/2) || ((number.charAt(0+a) == number.charAt(number.length()-1-a)) && isPalindrome(a+1, number));
 	}
 
 }
