@@ -1,42 +1,82 @@
 package projectEuler;
 
+/**
+ * The following iterative sequence is defined for the set of positive integers:
+ * 
+ * n -> n/2 (n is even)
+ * n -> 3n + 1 (n is odd)
+ * 
+ * Using the rule above and starting with 13, we generate the following sequence:
+ * 
+ * 13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+ * It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. 
+ * Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+ * 
+ * Which starting number, under one million, produces the longest chain?
+ * 
+ * NOTE: Once the chain starts the terms are allowed to go above one million.
+ * 
+ * @author Diego (DRA2840)
+ *
+ */
 public class P014 {
 	
-	private static final int[] collatzSequence = new int[1000000];
+	private static final int MAX_VALUE = 1000000;
+	private static final int RECURSIVE_MAX_VALUE = 1000;
 	
+	/*
+	 * Ok, I do know I could add a int[1000000] to reduce CPU usage. 
+	 * But I'm not sure if the time spent with all this RAM access would pay out.
+	 * And it is not an recursive approach (global variables and all that stuff)
+	 */
 	public static void main(String[] args) {
-		System.out.println(collatzSequence(0,0,1,1));
+		System.out.println(collatzSequence(0,0,1));
+		System.out.println(collatzSequenceNonRecursive());
 	}
 	
-	private static int collatzSequence(int size, int longest, int aux, int index){
-		
-		System.out.println("collatzSequence(" + size+ "," +longest +","+ aux +","+index+")");
-		
-		if(index == 1000000){
-			return longest;
-		}
-		
-		if(aux == 1){
-			collatzSequence[index] = ++size;
-			if(collatzSequence[index] > collatzSequence[longest]){
-				longest = index;
+	private static int collatzSequenceNonRecursive(){
+		int size;
+		int longest =0;
+		long aux;
+		int result =0;
+		for(int i=0; i< MAX_VALUE; i++){
+			aux = i+1;
+			size = 1;
+			while(aux > 1){
+				size++;
+				aux = nextNumberCollatzSequence(aux);
 			}
-			return collatzSequence(0, longest, ++index, index);
-		}
-		
-		if(aux < index){
-			collatzSequence[index] = ++size + collatzSequence[aux];
-			if(collatzSequence[index] > collatzSequence[longest]){
-				longest = index;
+			if(size > longest){
+				longest = size;
+				result = i+1;
 			}
-			return collatzSequence(0, longest, ++index, index);
 		}
-		
-		return collatzSequence(++size, longest, nextNumberCollatzSequence(aux), index);
+		return result;
+	}
+	
+	private static int collatzSequence( int longestSize, int longestValue, int index){
+
+		if(index == RECURSIVE_MAX_VALUE){
+			return longestValue;
+		}
+		int size = collatzSequenceSize(0, index);
+		if( size > longestSize){
+			longestSize = size;
+			longestValue = index;
+		}
+			
+		return collatzSequence(longestSize, longestValue, ++index);
 		
 	}
 	
-	private static int nextNumberCollatzSequence(int i){
+	private static int collatzSequenceSize(int size, long value){
+		if(value == 1){
+			return size;
+		}
+		return collatzSequenceSize(++size, nextNumberCollatzSequence(value));
+	}
+	
+	private static long nextNumberCollatzSequence(long i){
 		if(i%2 == 0){
 			return i/2;
 		}else{
