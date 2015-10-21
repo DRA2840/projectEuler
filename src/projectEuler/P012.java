@@ -23,10 +23,22 @@ package projectEuler;
 public class P012 {
 	
 	public static void main(String[] args) {
-		System.out.println(firstTriangleNumberToHaveXDivisorsNonRecursive(500));
+		System.out.println(calculateAnswer());
 		System.out.println(firstTriangleNumberToHaveXDivisors(1,2,5));
 	}
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static long calculateAnswer(){
+		return firstTriangleNumberToHaveXDivisorsNonRecursive(500);
+	}
 	
+	/**
+	 * Calculates the firts Triangle number to have x divisors. Non recursive approach
+	 * @param numberOfDivisors x
+	 * @return the first triangle number with at least x divisors.
+	 */
 	public static long firstTriangleNumberToHaveXDivisorsNonRecursive(int numberOfDivisors) {
 		long numberToTest = 1;
 		int aux = 2;
@@ -37,7 +49,14 @@ public class P012 {
 		return numberToTest;
 	}
 	
-	public static long firstTriangleNumberToHaveXDivisors(long numberToTest, int aux, int numberOfDivisors){
+	/**
+	 * Calculates the firts Triangle number to have x divisors.
+	 * @param numberToTest auxiliary variable. Should start with 1
+	 * @param aux another auxiliary variable. Should start with 2;
+	 * @param numberOfDivisors x
+	 * @return the first triangle number with at least x divisors.
+	 */
+	private static long firstTriangleNumberToHaveXDivisors(long numberToTest, int aux, int numberOfDivisors){
 		if(P000.numerOfDivisors(numberToTest)< numberOfDivisors){
 			return firstTriangleNumberToHaveXDivisors(numberToTest + aux, ++aux, numberOfDivisors);
 		}

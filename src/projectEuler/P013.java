@@ -118,16 +118,32 @@ public class P013 {
 	private static List<Long> mostSignificantPart;
 	
 	public static void main(String[] args) {
-		init();
-		System.out.println(sumAllValues(mostSignificantPart, 0).toString().substring(0, 10));
+		System.out.println(calculateAnswer());
 	}
 	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static String calculateAnswer(){
+		init();
+		return sumAllValues(mostSignificantPart, 0).toString().substring(0, 10);
+	}
+	
+	/**
+	 * Creates an array with the complete numbers, and a List with only the most significant part.
+	 */
 	private static void init(){
 		String [] array = LIST_OF_100_50_DIGIT_NUMBERS.split(" ");
 		mostSignificantPart = new ArrayList<Long>();
 		arrayToList(array, 0);
 	}
 
+	/**
+	 * populates the list with the most significant part of each number in the array
+	 * @param array array used as base
+	 * @param i auxiliary variable. starts with 0
+	 */
 	private static void arrayToList(String[] array, int i) {
 		if(i >= 100){
 			return;
@@ -135,6 +151,13 @@ public class P013 {
 		mostSignificantPart.add(Long.valueOf(array[i].substring(0, 12)));
 		arrayToList(array, i+1);
 	}
+	
+	/**
+	 * sums all values of the list
+	 * @param list base list
+	 * @param index index. Should start with 0;
+	 * @return the sum
+	 */
 	private static Long sumAllValues(List<Long> list, int index){
 		if(index >= list.size()){
 			return 0L;

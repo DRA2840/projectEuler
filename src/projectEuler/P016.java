@@ -1,6 +1,7 @@
 package projectEuler;
 
 
+
 /**
  * 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
  * 
@@ -12,7 +13,15 @@ package projectEuler;
 public class P016 {
 	
 	public static void main(String[] args) {
-		System.out.println(P000.sumOfDigits(P000.pow(2, 1000).toString()));
+		System.out.println(calculateAnswer());
+	}
+	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static int calculateAnswer(){
+		return P000.sumOfDigits(P000.pow(2, 1000).toString());
 	}
 
 }

@@ -21,13 +21,27 @@ public class P015 {
 	public static void main(String[] args) {
 		System.out.println(numberOfSteps(0, 0));
 		System.out.println(2*halfOfTheSteps(0, 0));
-		System.out.println(binomial(GRID_SIZE*2, GRID_SIZE));
+		System.out.println(calculateAnswer().toString());
+	}
+	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static BigDecimal calculateAnswer(){
+		return binomial(GRID_SIZE*2, GRID_SIZE);
 	}
 	
 	/* Almost 10 minutes running. Not the used algorithm, but was the first.
 	 * 
 	 * But let's face it. One line programs are so cool =X
 	 * */
+	/**
+	 * Calculates the number of paths for a square grid with SMAL_GRID_SIZE as size
+	 * @param x starting point. Should start with 0
+	 * @param y starting point. Should start with 0
+	 * @return number of paths
+	 */
 	private static long numberOfSteps(int x, int y){
 		return (x == SMALL_GRID_SIZE || y == SMALL_GRID_SIZE)? 1 :(numberOfSteps(x+1, y)+numberOfSteps(x, y+1));
 	}
@@ -35,6 +49,12 @@ public class P015 {
 	/* Expected to work under 1 minute, but took 5 =/
 	 * As Daft Punk would say, One More Time!
 	 * */
+	/**
+	 * Calculates half the number of paths for a square grid with SMAL_GRID_SIZE as size
+	 * @param x starting point. Should start with 0
+	 * @param y starting point. Should start with 0
+	 * @return half the number of paths
+	 */
 	private static long halfOfTheSteps(int x, int y){
 		
 		if(x == SMALL_GRID_SIZE ){
@@ -51,6 +71,12 @@ public class P015 {
 	 * a!/(a-b)!b!
 	 * a*(a-1)*...*(b+1)/(a-b)!
 	 * Had to use BigDecimal because the 40*39*...*21 is way too big to fit a Long.
+	 */
+	/**
+	 * Binomial a!/(b!*(a-b)!)
+	 * @param a A
+	 * @param b B
+	 * @return Binomial a!/(b!*(a-b)!)
 	 */
 	private static BigDecimal binomial(int a, int b){
 		return P000.binomial(a,b);

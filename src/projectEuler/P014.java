@@ -31,9 +31,21 @@ public class P014 {
 	 */
 	public static void main(String[] args) {
 		System.out.println(collatzSequence(0,0,1));
-		System.out.println(collatzSequenceNonRecursive());
+		System.out.println(calculateAnswer());
 	}
 	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static int calculateAnswer(){
+		return collatzSequenceNonRecursive();
+	}
+	
+	/**
+	 * Calculates the number with greatest Collatz sequence below MAX_VALUE
+	 * @return the number with longest Collatz sequence below MAX_VALUE
+	 */
 	private static int collatzSequenceNonRecursive(){
 		int size;
 		int longest =0;
@@ -54,6 +66,13 @@ public class P014 {
 		return result;
 	}
 	
+	/**
+	 * Calculates the number with greatest Collatz sequence below RECURSIVE_MAX_VALUE
+	 * @param longestSize auxiliary. Starts with 0.
+	 * @param longestValue auxiliary. Starts with 0
+	 * @param index auxiliary. Starts with 1
+	 * @return the number with longest Collatz sequence below RECURSIVE_MAX_VALUE
+	 */
 	private static int collatzSequence( int longestSize, int longestValue, int index){
 
 		if(index == RECURSIVE_MAX_VALUE){
@@ -69,6 +88,14 @@ public class P014 {
 		
 	}
 	
+	//TODO: Rip-off unnecessary variable
+	/**
+	 * Collatz sequence size for a given number
+	 * 
+	 * @param size to be ripped off. starts with 0
+	 * @param value given number
+	 * @return Collatz sequence size for 'value'
+	 */
 	private static int collatzSequenceSize(int size, long value){
 		if(value == 1){
 			return size;
@@ -76,6 +103,11 @@ public class P014 {
 		return collatzSequenceSize(++size, nextNumberCollatzSequence(value));
 	}
 	
+	/**
+	 * Calculates the next number in the Collatz Sequence
+	 * @param i actual number
+	 * @return next number
+	 */
 	private static long nextNumberCollatzSequence(long i){
 		if(i%2 == 0){
 			return i/2;

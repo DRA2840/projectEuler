@@ -62,10 +62,25 @@ public class P011 {
 	private static String[][] matrix;
 	
 	public static void main(String[] args) {
-		splitter();
-		System.out.println(greatestProductAdjacentNumbers(0,0,0));
+		System.out.println(calculateAnswer());
 	}
 	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static int calculateAnswer(){
+		splitter();
+		return greatestProductAdjacentNumbers(0,0,0);
+	}
+	
+	/**
+	 * Calculates the greatest product between 4 adjacent numbers in this matrix
+	 * @param greatestProductSoFar auxiliary variable, Should start with 0
+	 * @param i position I
+	 * @param j position J
+	 * @return greatest product between 4 adjacent numbers
+	 */
 	private static int greatestProductAdjacentNumbers(int greatestProductSoFar, int i, int j){
 		
 		if(j >= MATRIX_SIZE){
@@ -103,23 +118,67 @@ public class P011 {
 		return greatestProductAdjacentNumbers(greatestProductSoFar, i, ++j);
 	}
 	
+	/**
+	 * Performs a line product, starting in position matrix[i][j]
+	 * @param i I
+	 * @param j J
+	 * @param k size of the product
+	 * @return product
+	 */
 	private static int lineProduct(int i, int j, int k) {
 		return (k == 0)? 1:Integer.valueOf(matrix[i][j])*lineProduct(i, j+1, k-1);
 	}
+	
+	/**
+	 * Performs a column product, starting in position matrix[i][j]
+	 * @param i I
+	 * @param j J
+	 * @param k size of the product
+	 * @return product
+	 */
 	private static int columnProduct(int i, int j, int k) {
 		return (k == 0)? 1:Integer.valueOf(matrix[i][j])*columnProduct(i+1, j, k-1);
 	}
+	
+	/**
+	 * Performs a diagonal product, to the right, starting in position matrix[i][j]
+	 * @param i I
+	 * @param j J
+	 * @param k size of the product
+	 * @return product
+	 */
 	private static int diagRightProduct(int i, int j, int k) {
 		return (k == 0)? 1:Integer.valueOf(matrix[i][j])*diagRightProduct(i+1, j+1, k-1);
 	}
+	
+	/**
+	 * Performs a diagonal product, to the left, starting in position matrix[i][j]
+	 * @param i I
+	 * @param j J
+	 * @param k size of the product
+	 * @return product
+	 */
 	private static int diagLeftProduct(int i, int j, int k) {
 		return (k == 0)? 1:Integer.valueOf(matrix[i][j])*diagLeftProduct(i+1, j-1, k-1);
 	}
+	
+	/**
+	 * Splits the String and populates the matrix
+	 */
 	private static void splitter(){
 		String[] array = MATRIX_20_X_20.split(" ");
 		matrix = convertArrayToMatrix(new String[MATRIX_SIZE][MATRIX_SIZE], array, 0, 0);
 	}
 	
+	/**
+	 * Creates a String matrix from a String array
+	 * 
+	 * @param matrixSoFar aux variable of the matrix
+	 * @param array String array used as base
+	 * @param i position on the matrix
+	 * @param j position on the matrix
+	 * @return populated matrix
+	 */
 	private static String[][] convertArrayToMatrix(String[][] matrixSoFar, String[]array, int i, int j){
 		if(j >= MATRIX_SIZE){
 			return convertArrayToMatrix(matrixSoFar, array, i+1, 0);
