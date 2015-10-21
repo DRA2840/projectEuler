@@ -7,7 +7,7 @@ package projectEuler;
  * find the sum of the even-valued terms."
  * 
  * 
- * @author Diego (DRA2840)
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  */
 public class P002 {
 	
@@ -15,8 +15,16 @@ public class P002 {
 	
 	public static void main(String[] args) {
 		
-		System.out.println( sumOfEvenFibonacciNumbers(0, 0, 1) );
+		System.out.println( calculateAnswer() );
 		
+	}
+	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static int calculateAnswer(){
+		return sumOfEvenFibonacciNumbers(0, 0, 1);
 	}
 	
 	/**
@@ -33,6 +41,11 @@ public class P002 {
 		return sumOfEvenFibonacciNumbers( ((isEven(actual))? sum+actual : sum), actual, actual + last );
 	}
 	
+	/**
+	 * Is number even
+	 * @param a number
+	 * @return false, if number is odd =)
+	 */
 	private static boolean isEven(int a){
 		return  a%2 == 0 ;
 	}

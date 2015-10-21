@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  * 
  * How many such routes are there through a 20x20 grid?
  * 
- * @author Diego (DRA2840)
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  *
  */
 public class P015 {
@@ -53,7 +53,7 @@ public class P015 {
 	 * Had to use BigDecimal because the 40*39*...*21 is way too big to fit a Long.
 	 */
 	private static BigDecimal binomial(int a, int b){
-		return P000.binomial(a-1, (b>a-b)? b: a-b, (b>a-b)?a-b:b).multiply(BigDecimal.valueOf(a)).divide(P000.fatorial(a-b));
+		return P000.binomial(a,b);
 	}
 
 }

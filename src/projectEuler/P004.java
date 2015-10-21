@@ -7,7 +7,7 @@ package projectEuler;
  * palindrome made from the product of two 3-digit numbers."
  * 
  * 
- * @author Diego (DRA2840)
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  */
 
 public class P004 {

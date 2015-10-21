@@ -30,7 +30,7 @@ package projectEuler;
  * What is the greatest product of four adjacent numbers in the same direction 
  * (up, down, left, right, or diagonally) in the 20x20 grid?
 
- * @author Diego (DRA2840)
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  *
  */
 public class P011 {

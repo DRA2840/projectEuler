@@ -6,7 +6,7 @@ import java.math.BigInteger;
 /**
  * This class provides Methods and solutions that can be reused in other problems.
  *  
- * @author Diego (DRA2840)
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  *
  */
 public class P000 {
@@ -31,18 +31,39 @@ public class P000 {
 		return (a >= string.length()/2) || ((string.charAt(0+a) == string.charAt(string.length()-1-a)) && isPalindrome(a+1, string));
 	}
 
+	/**
+	 * Sum all naturals until X
+	 * @param x last natural to count
+	 * @return sum of all naturals until x
+	 */
 	public static long sumOfTheNaturalsUntilX(int x){
 		return ((x+1)*x)/2;
 	}
 
+	/**
+	 * X^2
+	 * @param x X
+	 * @return X^2
+	 */
 	public static long square(long x){
 		return x*x;
 	}
 
-	public static final long cube(long a){
-		return a*a*a;
+	/**
+	 * X^3
+	 * @param x X
+	 * @return X^2
+	 */
+	public static final long cube(long x){
+		return x*x*x;
 	}
 
+	/**
+	 * Largest number between two.
+	 * @param a number 1
+	 * @param b number 2
+	 * @return max between number 1 and number 2
+	 */
 	public static int max(int a, int b){
 		return (a>b)? a : b;
 	}
@@ -65,23 +86,56 @@ public class P000 {
 		return numerOfDivisors(number, P000.isDivisor(i, number)?aux+2:aux, ++i);
 	}
 
-	static boolean isDivisor(int i, long number) {
+	/**
+	 * is 'Number' divisible by 'I'?
+	 * @param i I
+	 * @param number Number
+	 * @return true if I can divide Number
+	 */
+	public static boolean isDivisor(int i, long number) {
 		return number%i==0;
 	}
 
-	static BigDecimal binomial(int a, int b, int c){
-		return (a==b)? BigDecimal.ONE :binomial(a-1, b, c).multiply(BigDecimal.valueOf(a));
+	/**
+	 * Binomial [a!/(b!*(a-b)!)] 
+	 * @param a A
+	 * @param b B
+	 * @return A!/(B!*(A-B)!)
+	 */
+	public static BigDecimal binomial(int a, int b){
+		return P000.binomialPart1(a-1, (b>a-b)? b: a-b).multiply(BigDecimal.valueOf(a)).divide(P000.fatorial((b>a-b)?a-b:b));
+	}
+	
+	//Internal use by binomial function
+	private static BigDecimal binomialPart1(int a, int b){
+		return (a==b)? BigDecimal.ONE :binomialPart1(a-1, b).multiply(BigDecimal.valueOf(a));
 	}
 
-	static BigDecimal fatorial(int a){
+	/**
+	 * Fatorial (A*(A-1)*...*2*1
+	 * @param a A
+	 * @return A!
+	 */
+	public static BigDecimal fatorial(int a){
 		return (a==1)?BigDecimal.ONE:fatorial(a-1).multiply(BigDecimal.valueOf(a));
 	}
 
-	static BigInteger pow(long num, int exp){
+	/**
+	 * 'Num'^'Exp' 
+	 * @param num Num
+	 * @param exp Exp
+	 * @return Num^Exp
+	 */
+	public static BigInteger pow(long num, int exp){
 		return (exp == 0)? BigInteger.ONE : BigInteger.valueOf(num).multiply(pow(num, exp-1));
 	}
 
-	static int sumOfDigits(String s){
+	/**
+	 * Sum all digits on a numeric string
+	 * @param s numeric string
+	 * @return sum of all digits
+	 */
+	public static int sumOfDigits(String s){
 		return (s.length()== 0)? 0 : Integer.valueOf(s.substring(0, 1)) + sumOfDigits(s.substring(1));
 	}
 
