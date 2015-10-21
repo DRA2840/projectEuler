@@ -78,25 +78,25 @@ public class P011 {
 		if(j+ 4 < MATRIX_SIZE){// Is line possible to calculate?
 			
 			aux = lineProduct(i,j, 4);
-			greatestProductSoFar = max(greatestProductSoFar, aux);
+			greatestProductSoFar = P000.max(greatestProductSoFar, aux);
 			
 		}
 		if(i+4< MATRIX_SIZE){// Is column Possible?
 			
 			aux = columnProduct(i,j, 4);
-			greatestProductSoFar = max(greatestProductSoFar, aux);
+			greatestProductSoFar = P000.max(greatestProductSoFar, aux);
 			
 		}
 		if(j+4 < MATRIX_SIZE && i+4 < MATRIX_SIZE){// Is diagonal Right possible?
 			
 			aux = diagRightProduct(i,j, 4);
-			greatestProductSoFar = max(greatestProductSoFar, aux);
+			greatestProductSoFar = P000.max(greatestProductSoFar, aux);
 			
 		}
 		if(j-4 >= 0 && i+4 < MATRIX_SIZE){// Is diagonal Left possible?
 			
 			aux = diagLeftProduct(i,j, 4);
-			greatestProductSoFar = max(greatestProductSoFar, aux);
+			greatestProductSoFar = P000.max(greatestProductSoFar, aux);
 			
 		}
 		
@@ -115,10 +115,6 @@ public class P011 {
 	private static int diagLeftProduct(int i, int j, int k) {
 		return (k == 0)? 1:Integer.valueOf(matrix[i][j])*diagLeftProduct(i+1, j-1, k-1);
 	}
-	private static int max(int a, int b){
-		return (a>b)? a : b;
-	}
-
 	private static void splitter(){
 		String[] array = MATRIX_20_X_20.split(" ");
 		matrix = convertArrayToMatrix(new String[MATRIX_SIZE][MATRIX_SIZE], array, 0, 0);

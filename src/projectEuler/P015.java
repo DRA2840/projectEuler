@@ -53,15 +53,7 @@ public class P015 {
 	 * Had to use BigDecimal because the 40*39*...*21 is way too big to fit a Long.
 	 */
 	private static BigDecimal binomial(int a, int b){
-		return binomial(a-1, b, a-b).multiply(BigDecimal.valueOf(a)).divide(fatorial(a-b));
-	}
-	
-	private static BigDecimal binomial(int a, int b, int c){
-		return (a==b)? BigDecimal.ONE :binomial(a-1, b, c).multiply(BigDecimal.valueOf(a));
-	}
-	
-	private static BigDecimal fatorial(int a){
-		return (a==1)?BigDecimal.ONE:fatorial(a-1).multiply(BigDecimal.valueOf(a));
+		return P000.binomial(a-1, (b>a-b)? b: a-b, (b>a-b)?a-b:b).multiply(BigDecimal.valueOf(a)).divide(P000.fatorial(a-b));
 	}
 
 }

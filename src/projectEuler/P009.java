@@ -37,15 +37,11 @@ public class P009 {
 		
 		if (sum % ((2*m)*(m+n)) == 0){
 			// if you found it, multiply all elements and multiply again by K^3
-			return cube((sum / ((2*m)*(m+n))))*(m*m-n*n)*(2*m*n)*(m*m+n*n);
+			return P000.cube((sum / ((2*m)*(m+n))))*(m*m-n*n)*(2*m*n)*(m*m+n*n);
 		}
 		
 		// if you didn't find, increments the biggest and keep going
 		return findAndMultiplyPytagoreanTriplet(sum, m+1, n);
-	}
-	
-	private static final long cube(long a){
-		return a*a*a;
 	}
 
 }

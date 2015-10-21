@@ -17,7 +17,7 @@ public class P007 {
 	
 	//This recursive approach works only for ''smal'' values for N
 	public static long findNPrimeNumber(int n, int aux){
-		return ((P003.isPrime(2, aux))? ((n ==0)? aux :findNPrimeNumber(n-1, aux+1)) : findNPrimeNumber(n, aux+1));
+		return ((P000.isPrime(2, aux))? ((n ==0)? aux :findNPrimeNumber(n-1, aux+1)) : findNPrimeNumber(n, aux+1));
 	}
 	
 	/* I do not like this. It's the same algorithm, but non recursive, 
@@ -32,7 +32,7 @@ public class P007 {
 		
 		int aux = 2;
 		while(n != 0){
-			if(P003.isPrime(2, aux)){
+			if(P000.isPrime(2, aux)){
 				n--;
 			}
 			aux++;

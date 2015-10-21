@@ -32,17 +32,13 @@ public class P004 {
 		
 		int aux = multiplicand1 * multiplicand2;
 		
-		if(aux > largestPalindromeSoFar && isPalindrome(0,String.valueOf(aux))){
+		if(aux > largestPalindromeSoFar && P000.isPalindrome(0,String.valueOf(aux))){
 			return largestPalindrome(aux, multiplicand1 -1, multiplicand1-1);
 		}else if(aux < largestPalindromeSoFar){
 			return largestPalindrome(largestPalindromeSoFar, multiplicand1-1, multiplicand1-1);
 		}
 		
 		return largestPalindrome(largestPalindromeSoFar, multiplicand1, multiplicand2-1);
-	}
-	
-	public static boolean isPalindrome(int a,String number){
-		return (a >= number.length()/2) || ((number.charAt(0+a) == number.charAt(number.length()-1-a)) && isPalindrome(a+1, number));
 	}
 
 }

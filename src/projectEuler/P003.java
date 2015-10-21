@@ -26,22 +26,12 @@ public class P003 {
 	private static long findLargestPrimeFactor(long maxPrimeFactor, long aux, long numberToTest) {
 		
 		if(aux * aux > numberToTest){
-			return (isPrime(2, numberToTest)? numberToTest :maxPrimeFactor);
+			return (P000.isPrime(2, numberToTest)? numberToTest :maxPrimeFactor);
 		}
-		if(numberToTest % aux == 0 && isPrime(2L, aux)){
+		if(numberToTest % aux == 0 && P000.isPrime(2L, aux)){
 			return findLargestPrimeFactor(aux, aux+1, numberToTest/aux);
 		}
 		return findLargestPrimeFactor(maxPrimeFactor, aux+1, numberToTest);
-	}
-	
-	/**
-	 * Checks if the given number is prime
-	 * @param aux number being verified if is a factor. Should start with 2, since all numbers are divisible by 1
-	 * @param numberToTest given number
-	 * @return
-	 */
-	public static boolean isPrime(long aux, long numberToTest){
-		return (aux*aux > numberToTest) || ((numberToTest % aux != 0) && isPrime(aux+1, numberToTest));
 	}
 	
 	

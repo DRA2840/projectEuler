@@ -19,14 +19,14 @@ public class P010 {
 		if(number == 1){
 			return sumSoFar;
 		}
-		return sumAllPrimes( ((P003.isPrime(2, number))? sumSoFar+number : sumSoFar), number-1 );
+		return sumAllPrimes( ((P000.isPrime(2, number))? sumSoFar+number : sumSoFar), number-1 );
 	}
 	
 	public static long sumAllPrimesNotRecursive(long number){
 		
 		long sumSoFar = 0;
 		while(number != 1){
-			if(P003.isPrime(2, number)){
+			if(P000.isPrime(2, number)){
 				sumSoFar += number;
 			}
 			number--;

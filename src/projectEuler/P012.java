@@ -30,7 +30,7 @@ public class P012 {
 	public static long firstTriangleNumberToHaveXDivisorsNonRecursive(int numberOfDivisors) {
 		long numberToTest = 1;
 		int aux = 2;
-		while(numerOfDivisors(numberToTest, 0, 1) < numberOfDivisors){
+		while(P000.numerOfDivisors(numberToTest, 0, 1) < numberOfDivisors){
 			numberToTest +=aux;
 			++aux;
 		}
@@ -38,25 +38,11 @@ public class P012 {
 	}
 	
 	public static long firstTriangleNumberToHaveXDivisors(long numberToTest, int aux, int numberOfDivisors){
-		if(numerOfDivisors(numberToTest, 0, 1)< numberOfDivisors){
+		if(P000.numerOfDivisors(numberToTest, 0, 1)< numberOfDivisors){
 			return firstTriangleNumberToHaveXDivisors(numberToTest + aux, ++aux, numberOfDivisors);
 		}
 		
 		return numberToTest;
-	}
-	
-	public static int numerOfDivisors(long number, int aux, int i){
-		if(i*i > number){
-			return aux;
-		}else if(i*i == number){
-			return aux+1;
-		}
-	
-		return numerOfDivisors(number, isDivisor(i, number)?aux+2:aux, ++i);
-	}
-
-	private static boolean isDivisor(int i, long number) {
-		return number%i==0;
 	}
 
 }
