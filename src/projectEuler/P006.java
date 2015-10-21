@@ -13,9 +13,22 @@ package projectEuler;
 public class P006 {
 
 	public static void main(String[] args) {
-		System.out.println( P000.square(P000.sumOfTheNaturalsUntilX(100)) - sumOfTheSquaresUntilX(100) );
+		System.out.println( calculateAnswer() );
 	}
 	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static long calculateAnswer(){
+		return P000.square(P000.sumOfTheNaturalsUntilX(100)) - sumOfTheSquaresUntilX(100);
+	}
+	
+	/**
+	 * Sums all squares from 1 until X
+	 * @param x X
+	 * @return sum of all squares from 1 until X
+	 */
 	private static long sumOfTheSquaresUntilX(int x){
 		return ((x == 1)? 1 : x*x+sumOfTheSquaresUntilX(x-1) );
 	}

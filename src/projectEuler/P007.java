@@ -11,13 +11,28 @@ public class P007 {
 	
 	public static void main(String[] args) {
 		System.out.println(findNPrimeNumber(900,1));
-		System.out.println(findNPrimeNumberNonRecursive(10001));
+		System.out.println(calculateAnswer());
 		
 	}
 	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static long calculateAnswer(){
+		return findNPrimeNumberNonRecursive(10001);
+	}
+	
 	//This recursive approach works only for ''smal'' values for N
-	public static long findNPrimeNumber(int n, int aux){
-		return ((P000.isPrime(2, aux))? ((n ==0)? aux :findNPrimeNumber(n-1, aux+1)) : findNPrimeNumber(n, aux+1));
+	//TODO: Improve recursive approach
+	/**
+	 * Finds the 'N'st prime number 
+	 * @param n N
+	 * @param aux Auxiliary variable. Should start with 1
+	 * @return the 'N'st prime number
+	 */
+	private static long findNPrimeNumber(int n, int aux){
+		return ((P000.isPrime(aux))? ((n ==0)? aux :findNPrimeNumber(n-1, aux+1)) : findNPrimeNumber(n, aux+1));
 	}
 	
 	/* I do not like this. It's the same algorithm, but non recursive, 
@@ -28,11 +43,16 @@ public class P007 {
 	 * some kind of optimization that won't get me a stackoverflow error
 	 * Funny thing: sometimes I get the error with 900, sometimes I don't.
 	 * */
+	/**
+	 * Finds the 'N'st prime number using a non-recursive approach
+	 * @param n N
+	 * @return the 'N'st prime number
+	 */
 	public static long findNPrimeNumberNonRecursive(int n){
 		
 		int aux = 2;
 		while(n != 0){
-			if(P000.isPrime(2, aux)){
+			if(P000.isPrime( aux)){
 				n--;
 			}
 			aux++;

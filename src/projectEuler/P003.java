@@ -12,8 +12,15 @@ public class P003 {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(findLargestPrimeFactor(1, 2, 600851475143L) );
+		System.out.println(calculateAnswer() );
 		
+	}
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static long calculateAnswer(){
+		return findLargestPrimeFactor(1, 2, 600851475143L);
 	}
 	
 	/**
@@ -26,9 +33,9 @@ public class P003 {
 	private static long findLargestPrimeFactor(long maxPrimeFactor, long aux, long numberToTest) {
 		
 		if(aux * aux > numberToTest){
-			return (P000.isPrime(2, numberToTest)? numberToTest :maxPrimeFactor);
+			return (P000.isPrime( numberToTest)? numberToTest :maxPrimeFactor);
 		}
-		if(numberToTest % aux == 0 && P000.isPrime(2L, aux)){
+		if(numberToTest % aux == 0 && P000.isPrime( aux)){
 			return findLargestPrimeFactor(aux, aux+1, numberToTest/aux);
 		}
 		return findLargestPrimeFactor(maxPrimeFactor, aux+1, numberToTest);

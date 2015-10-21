@@ -13,21 +13,39 @@ public class P000 {
 
 	/**
 	 * Checks if the given number is prime
+	 * @param numberToTest given number
+	 * @return true, if number is prime
+	 */
+	public static boolean isPrime(long numberToTest){
+		return isPrime(2, numberToTest);
+	}
+	
+	/**
+	 * Checks if the given number is prime
 	 * @param aux number being verified if is a factor. Should start with 2, since all numbers are divisible by 1
 	 * @param numberToTest given number
-	 * @return
+	 * @return true, if number is prime
 	 */
-	public static boolean isPrime(long aux, long numberToTest){
+	private static boolean isPrime(long aux, long numberToTest){
 		return (aux*aux > numberToTest) || ((numberToTest % aux != 0) && isPrime(aux+1, numberToTest));
 	}
 
+	/**
+	 * Checks if the given String is a palindrome.
+	 * @param string Given String
+	 * @return true, if string is a palindrome
+	 */
+	public static boolean isPalindrome(String string){
+		return isPalindrome(0, string);
+	}
+	
 	/**
 	 * Checks if the given String is a palindrome.
 	 * @param a position tested. should start with 0.
 	 * @param string Given String
 	 * @return true, if string is a palindrome
 	 */
-	public static boolean isPalindrome(int a,String string){
+	private static boolean isPalindrome(int a,String string){
 		return (a >= string.length()/2) || ((string.charAt(0+a) == string.charAt(string.length()-1-a)) && isPalindrome(a+1, string));
 	}
 
@@ -72,11 +90,21 @@ public class P000 {
 	 * Returns the number of divisors of a given number
 	 * 
 	 * @param number given number
+	 * @return number of divisors of a given number.
+	 */
+	public static int numerOfDivisors(long number){
+		return numerOfDivisors(number, 0, 1);
+	}
+	
+	/**
+	 * Returns the number of divisors of a given number
+	 * 
+	 * @param number given number
 	 * @param aux number of divisors so far (should start with 0)
 	 * @param i first divisor to check (should start with 1)
 	 * @return number of divisors of a given number.
 	 */
-	public static int numerOfDivisors(long number, int aux, int i){
+	private static int numerOfDivisors(long number, int aux, int i){
 		if(i*i > number){
 			return aux;
 		}else if(i*i == number){
