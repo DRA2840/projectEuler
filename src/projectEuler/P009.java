@@ -13,7 +13,15 @@ package projectEuler;
 public class P009 {
 	
 	public static void main(String[] args) {
-		System.out.println(findAndMultiplyPytagoreanTriplet(1000,1,1));
+		System.out.println(calculateAnswer());
+	}
+	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static long calculateAnswer(){
+		return findAndMultiplyPytagoreanTriplet(1000,1,1);
 	}
 	
 	/*
@@ -21,6 +29,13 @@ public class P009 {
 	 * a = m^2 - n^2; b = 2mn; c = m^2 + n^2
 	 * You can multiply all elements with a constant K
 	 * */
+	/**
+	 * Finds a Pythagorean Triplet with a given sum and multiply it's elements
+	 * @param sum sum
+	 * @param m Don't worry about this. Starts with 0
+	 * @param n Don't worry about this. Starts with 0
+	 * @return a*b*c in a pythagoran triplet with the given sum, if exists. 0 otherwise.
+	 */
 	private static long findAndMultiplyPytagoreanTriplet(int sum, int m, int n){
 		if(m <= n){
 			// m should be always bigger than n

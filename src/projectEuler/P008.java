@@ -57,15 +57,34 @@ public class P008 {
 	private static String[] array;
 	
 	public static void main(String[] args) {
-		splitter();
 		System.out.println(greatestProduct(0,0,13));
 	}
 	
-	public static void splitter(){
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static long calculateAnswer(){
+		splitter();
+		return greatestProduct(0, 0, 13);
+	}
+	
+	/**
+	 * Splits the string into a String-with-only-one-char array
+	 */
+	private static void splitter(){
 		array = ONE_THOUSAND_DIGIT_NUMBER.split("");
 	}
 	
-	public static long greatestProduct(long greatestProductSoFar, int first, int offset){
+	//TODO: Rip-off the auxiliary variable. use Max(a,b)
+	/**
+	 * Finds the greatest product between 'N' consecutive digits in that number
+	 * @param greatestProductSoFar auxiliary variable. Should start with 0
+	 * @param first position of first digit in the array. Should start with 0
+	 * @param offset 'N'
+	 * @return The greatest product between 'N' consecutive digits
+	 */
+	private static long greatestProduct(long greatestProductSoFar, int first, int offset){
 		if(first + offset == array.length){
 			return greatestProductSoFar;
 		}

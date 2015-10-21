@@ -11,10 +11,25 @@ public class P010 {
 
 	public static void main(String[] args) {
 		System.out.println(sumAllPrimes( 0,10));
-		System.out.println(sumAllPrimesNotRecursive(2000000));
+		System.out.println(calculateAnswer());
+	}
+
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
+	public static long calculateAnswer(){
+		return sumAllPrimesNotRecursive(2000000);
 	}
 	
 	//Just like P007, the recursive approach didn't work for big numbers =(
+	//TODO: rip off sumSoFar. Unnecessary.
+	/**
+	 * Sums all primes bellow a max number
+	 * @param sumSoFar To be ripped off. Starts with 0
+	 * @param number max number
+	 * @return sum of all primes below number
+	 */
 	public static long sumAllPrimes(long sumSoFar, long number){
 		if(number == 1){
 			return sumSoFar;
@@ -22,6 +37,11 @@ public class P010 {
 		return sumAllPrimes( ((P000.isPrime( number))? sumSoFar+number : sumSoFar), number-1 );
 	}
 	
+	/**
+	 * Sums all primes bellow a max number. Non-recursive approach
+	 * @param number max number
+	 * @return Sums all primes bellow a max number
+	 */
 	public static long sumAllPrimesNotRecursive(long number){
 		
 		long sumSoFar = 0;
