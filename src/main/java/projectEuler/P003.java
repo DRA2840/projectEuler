@@ -36,7 +36,6 @@ public class P003 {
 			return numberToTest;
 		}
 		if(numberToTest % aux == 0 && P000.isPrime( aux)){
-			System.out.println(aux);
 			return P000.max(aux, findLargestPrimeFactor(aux, numberToTest/aux));
 		}
 		return findLargestPrimeFactor(aux+1, numberToTest);
