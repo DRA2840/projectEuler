@@ -3,14 +3,14 @@ package projectEuler;
 import java.math.BigDecimal;
 
 /**
- * Starting in the top left corner of a 2x2 grid, and only being able to move 
- * to the right and down, there are exactly 6 routes to the bottom right corner.
+ * <p>Starting in the top left corner of a 2x2 grid, and only being able to move 
+ * to the right and down, there are exactly 6 routes to the bottom right corner.</p>
  * 
- *      IMAGE(https://projecteuler.net/project/images/p015.gif)
+ *      <img src="https://projecteuler.net/project/images/p015.gif" alt="Problem 15" align="middle">
  * 
- * How many such routes are there through a 20x20 grid?
+ * <p>How many such routes are there through a 20x20 grid?</p>
  * 
- * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" alt="Gravatar"> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  *
  */
 public class P015 {

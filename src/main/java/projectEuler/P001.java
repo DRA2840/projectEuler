@@ -1,11 +1,12 @@
 package projectEuler;
 /**
- * "If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
- * The sum of these multiples is 23.
- * Find the sum of all the multiples of 3 or 5 below 1000."
+ * <p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
+ * The sum of these multiples is 23.</p>
+ * 
+ * <p>Find the sum of all the multiples of 3 or 5 below 1000.</p>
  * 
  * 
- * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" alt="Gravatar"> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  */
 public class P001 {
 	

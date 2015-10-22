@@ -1,10 +1,10 @@
 package projectEuler;
 
 /**
- * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
- * Find the sum of all the primes below two million.
+ * <p>The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.</p>
+ * <p>Find the sum of all the primes below two million.</p>
  * 
- * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" alt="Gravatar"> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  *
  */
 public class P010 {

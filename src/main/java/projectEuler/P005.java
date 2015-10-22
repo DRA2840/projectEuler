@@ -1,10 +1,11 @@
 package projectEuler;
 
 /**
- * "2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
- * What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?"
+ * <p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.</p>
  * 
- * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
+ * <p>What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?</p>
+ * 
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" alt="Gravatar"> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  */
 public class P005 {
 

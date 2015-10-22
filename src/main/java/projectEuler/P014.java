@@ -1,22 +1,24 @@
 package projectEuler;
 
 /**
- * The following iterative sequence is defined for the set of positive integers:
+ * <p>The following iterative sequence is defined for the set of positive integers:</p>
+ * <center>
+ * n &rarr; n/2 (n is even)<br>
+ * n &rarr; 3n + 1 (n is odd)<br>
+ * </center>
  * 
- * n -> n/2 (n is even)
- * n -> 3n + 1 (n is odd)
+ * <p>Using the rule above and starting with 13, we generate the following sequence:</p>
  * 
- * Using the rule above and starting with 13, we generate the following sequence:
+ * <center>13 &rarr; 40 &rarr; 20 &rarr; 10 &rarr; 5 &rarr; 16 &rarr; 8 &rarr; 4 &rarr; 2 &rarr; 1</center>
  * 
- * 13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
- * It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. 
- * Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+ * <p>It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. 
+ * Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.</p>
  * 
- * Which starting number, under one million, produces the longest chain?
+ * <p>Which starting number, under one million, produces the longest chain?</p>
  * 
- * NOTE: Once the chain starts the terms are allowed to go above one million.
+ * <p><b>NOTE:</b> Once the chain starts the terms are allowed to go above one million.</p>
  * 
- * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" alt="Gravatar"> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  *
  */
 public class P014 {

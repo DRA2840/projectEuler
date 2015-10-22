@@ -1,13 +1,16 @@
 package projectEuler;
 
 /**
- * A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
- * a2 + b2 = c2
- * For example, 32 + 42 = 9 + 16 = 25 = 52.
- * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
- * Find the product abc.
+ * <p>A Pythagorean triplet is a set of three natural numbers, <i>a &lt; b &lt; c </i>, for which,</p>
  * 
- * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
+ *     <center>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></center>
+ * 
+ * <p>For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.</p>
+ * 
+ * <p>There exists exactly one Pythagorean triplet for which <i> a + b + c </i> = 1000.<br>
+ * Find the product <i>abc</i>.</p>
+ * 
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" alt="Gravatar"> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  *
  */
 public class P009 {

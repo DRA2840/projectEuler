@@ -2,11 +2,12 @@ package projectEuler;
 
 
 /**
- * "The prime factors of 13195 are 5, 7, 13 and 29.
- * What is the largest prime factor of the number 600851475143 "
+ * <p>The prime factors of 13195 are 5, 7, 13 and 29.</p>
+ * 
+ * <p>What is the largest prime factor of the number 600851475143</p>
  * 
  * 
- * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" alt="Gravatar"> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  */
 public class P003 {
 	

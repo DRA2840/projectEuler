@@ -2,12 +2,13 @@ package projectEuler;
 
 
 /**
- * "A palindromic number reads the same both ways. The largest palindrome made
- * from the product of two 2-digit numbers is 9009 = 91 × 99. Find the largest
- * palindrome made from the product of two 3-digit numbers."
+ * <p>A palindromic number reads the same both ways. The largest palindrome made
+ * from the product of two 2-digit numbers is 9009 = 91 × 99.</p>
+ * 
+ * <p>Find the largest palindrome made from the product of two 3-digit numbers.</p>
  * 
  * 
- * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" /> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
+ * @author <img src="https://avatars2.githubusercontent.com/u/3778188?v=2&s=30" width="30" height="30" alt="Gravatar"> <a href="https://github.com/DRA2840" target="_blank"> Diego Azevedo (DRA2840) </a>
  */
 
 public class P004 {
