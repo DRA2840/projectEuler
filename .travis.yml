@@ -1,0 +1,16 @@
+language: java
+
+jdk:
+- oraclejdk7
+- openjdk6
+
+env:
+- TERM=dumb
+
+before_install:
+   - pip install --user codecov
+
+after_success:
+  - codecov
+
+sudo: false
