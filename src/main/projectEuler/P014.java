@@ -38,8 +38,8 @@ public class P014 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static int calculateAnswer(){
-		return collatzSequenceNonRecursive();
+	public static String calculateAnswer(){
+		return String.valueOf(collatzSequenceNonRecursive());
 	}
 	
 	/**

@@ -23,8 +23,8 @@ public class P002 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static int calculateAnswer(){
-		return sumOfEvenFibonacciNumbers(0, 0, 1);
+	public static String calculateAnswer(){
+		return String.valueOf(sumOfEvenFibonacciNumbers(0, 0, 1));
 	}
 	
 	/**

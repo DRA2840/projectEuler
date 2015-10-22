@@ -24,8 +24,8 @@ public class P004 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static int calculateAnswer(){
-		return largestPalindrome(0, MAX, MAX);
+	public static String calculateAnswer(){
+		return String.valueOf(largestPalindrome(0, MAX, MAX));
 	}
 
 	/**

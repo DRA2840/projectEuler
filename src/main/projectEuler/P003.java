@@ -19,8 +19,8 @@ public class P003 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static long calculateAnswer(){
-		return findLargestPrimeFactor(1, 2, 600851475143L);
+	public static String calculateAnswer(){
+		return String.valueOf(findLargestPrimeFactor(1, 2, 600851475143L));
 	}
 	
 	/**

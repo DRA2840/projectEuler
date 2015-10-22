@@ -20,8 +20,8 @@ public class P006 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static long calculateAnswer(){
-		return P000.square(P000.sumOfTheNaturalsUntilX(100)) - sumOfTheSquaresUntilX(100);
+	public static String calculateAnswer(){
+		return String.valueOf(P000.square(P000.sumOfTheNaturalsUntilX(100)) - sumOfTheSquaresUntilX(100));
 	}
 	
 	/**

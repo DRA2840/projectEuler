@@ -69,9 +69,9 @@ public class P011 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static int calculateAnswer(){
+	public static String calculateAnswer(){
 		splitter();
-		return greatestProductAdjacentNumbers(0,0,0);
+		return String.valueOf(greatestProductAdjacentNumbers(0,0,0));
 	}
 	
 	/**

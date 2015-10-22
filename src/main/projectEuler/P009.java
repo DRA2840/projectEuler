@@ -20,8 +20,8 @@ public class P009 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static long calculateAnswer(){
-		return findAndMultiplyPytagoreanTriplet(1000,1,1);
+	public static String calculateAnswer(){
+		return String.valueOf(findAndMultiplyPytagoreanTriplet(1000,1,1));
 	}
 	
 	/*

@@ -28,8 +28,8 @@ public class P015 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static BigDecimal calculateAnswer(){
-		return binomial(GRID_SIZE*2, GRID_SIZE);
+	public static String calculateAnswer(){
+		return binomial(GRID_SIZE*2, GRID_SIZE).toString();
 	}
 	
 	/* Almost 10 minutes running. Not the used algorithm, but was the first.

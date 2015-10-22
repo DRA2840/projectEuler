@@ -30,8 +30,8 @@ public class P012 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static long calculateAnswer(){
-		return firstTriangleNumberToHaveXDivisorsNonRecursive(500);
+	public static String calculateAnswer(){
+		return String.valueOf(firstTriangleNumberToHaveXDivisorsNonRecursive(500));
 	}
 	
 	/**

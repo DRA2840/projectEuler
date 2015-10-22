@@ -20,8 +20,8 @@ public class P016 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static int calculateAnswer(){
-		return P000.sumOfDigits(P000.pow(2, 1000).toString());
+	public static String calculateAnswer(){
+		return String.valueOf(P000.sumOfDigits(P000.pow(2, 1000).toString()));
 	}
 
 }

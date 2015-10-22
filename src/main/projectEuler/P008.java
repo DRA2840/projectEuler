@@ -64,9 +64,9 @@ public class P008 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static long calculateAnswer(){
+	public static String calculateAnswer(){
 		splitter();
-		return greatestProduct(0, 0, 13);
+		return String.valueOf(greatestProduct(0, 0, 13));
 	}
 	
 	/**

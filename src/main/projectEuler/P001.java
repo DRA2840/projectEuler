@@ -19,8 +19,8 @@ public class P001 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static int calculateAnswer(){
-		return sumOfAllMultiplesof3or5ForAandBelow(999);
+	public static String calculateAnswer(){
+		return String.valueOf(sumOfAllMultiplesof3or5ForAandBelow(999));
 	}
 	
 	/**

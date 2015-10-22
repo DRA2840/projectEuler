@@ -20,10 +20,10 @@ public class P005 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static long calculateAnswer(){
+	public static String calculateAnswer(){
 		/* first I find the product of all of them, and then I rip-off the unnecessary factors*/
 		long inicial = P000.fatorial(20).longValue();
-		return unnecessaryFactorReaper(inicial, A, B);
+		return String.valueOf(unnecessaryFactorReaper(inicial, A, B));
 	}
 	
 	/**

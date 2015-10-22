@@ -19,8 +19,8 @@ public class P007 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static long calculateAnswer(){
-		return findNPrimeNumberNonRecursive(10001);
+	public static String calculateAnswer(){
+		return String.valueOf(findNPrimeNumberNonRecursive(10001));
 	}
 	
 	//This recursive approach works only for ''smal'' values for N

@@ -18,8 +18,8 @@ public class P010 {
 	 * Calculates answer
 	 * @return answer
 	 */
-	public static long calculateAnswer(){
-		return sumAllPrimesNotRecursive(2000000);
+	public static String calculateAnswer(){
+		return String.valueOf(sumAllPrimesNotRecursive(2000000));
 	}
 	
 	//Just like P007, the recursive approach didn't work for big numbers =(
