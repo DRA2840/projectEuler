@@ -58,7 +58,7 @@ public class P008 {
 			+ "05886116467109405077541002256983155200055935729725"
 			+ "71636269561882670428252483600823257530420752963450";
 	
-	private static String[] array;
+	private static final String[] array = ONE_THOUSAND_DIGIT_NUMBER.split("");
 	
 	public static void main(String[] args) {
 		System.out.println(calculateAnswer());
@@ -69,15 +69,7 @@ public class P008 {
 	 * @return answer
 	 */
 	public static String calculateAnswer(){
-		splitter();
 		return String.valueOf(greatestProduct(0, 13));
-	}
-	
-	/**
-	 * Splits the string into a String-with-only-one-char array
-	 */
-	private static void splitter(){
-		array = ONE_THOUSAND_DIGIT_NUMBER.split("");
 	}
 	
 	//TODO: Rip-off the auxiliary variable. use Max(a,b)
