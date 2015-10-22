@@ -10,7 +10,7 @@ package projectEuler;
 public class P010 {
 
 	public static void main(String[] args) {
-		System.out.println(sumAllPrimes( 0,10));
+		System.out.println(sumAllPrimes( 10));
 		System.out.println(calculateAnswer());
 	}
 
@@ -23,18 +23,16 @@ public class P010 {
 	}
 	
 	//Just like P007, the recursive approach didn't work for big numbers =(
-	//TODO: rip off sumSoFar. Unnecessary.
 	/**
 	 * Sums all primes bellow a max number
-	 * @param sumSoFar To be ripped off. Starts with 0
 	 * @param number max number
 	 * @return sum of all primes below number
 	 */
-	public static long sumAllPrimes(long sumSoFar, long number){
+	public static long sumAllPrimes(long number){
 		if(number == 1){
-			return sumSoFar;
+			return 0;
 		}
-		return sumAllPrimes( ((P000.isPrime( number))? sumSoFar+number : sumSoFar), number-1 );
+		return (P000.isPrime( number)? number : 0) + sumAllPrimes(number-1 );
 	}
 	
 	/**

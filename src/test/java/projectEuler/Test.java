@@ -9,7 +9,7 @@ import org.junit.runners.JUnit4;
 public class Test {
 	
 	@org.junit.Test
-	public void testProblems(){
+	public void testAllProblems(){
 		Assert.assertEquals(P001.calculateAnswer(), "233168");
 		Assert.assertEquals(P002.calculateAnswer(), "4613732");
 		Assert.assertEquals(P003.calculateAnswer(), "6857");

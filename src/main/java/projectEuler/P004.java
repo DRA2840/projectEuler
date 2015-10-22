@@ -28,6 +28,10 @@ public class P004 {
 		return String.valueOf(largestPalindrome(0, MAX, MAX));
 	}
 
+	/*
+	 * Tried to rip-off this largestPalindromeSoFar variable using P00.max, but
+	 * the optimization in line 56 is crucial so we don't get a StackOverflowError
+	 */
 	/**
 	 * Finds Largest Palindrome between a product of two numbers
 	 * @param largestPalindromeSoFar largest palindrome so far (Should start with 0)

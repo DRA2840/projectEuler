@@ -20,25 +20,25 @@ public class P003 {
 	 * @return answer
 	 */
 	public static String calculateAnswer(){
-		return String.valueOf(findLargestPrimeFactor(1, 2, 600851475143L));
+		return String.valueOf(findLargestPrimeFactor( 2, 600851475143L));
 	}
 	
 	/**
 	 * Finds the largest prime factor of a given number
-	 * @param maxPrimeFactor max prime factor so far. Should start with 1
 	 * @param aux number being verified if is a prime factor. Should start with 2, since all numbers are divisible by 1
 	 * @param numberToTest the given number
 	 * @return
 	 */
-	private static long findLargestPrimeFactor(long maxPrimeFactor, long aux, long numberToTest) {
+	private static long findLargestPrimeFactor(long aux, long numberToTest) {
 		
 		if(aux * aux > numberToTest){
-			return (P000.isPrime( numberToTest)? numberToTest :maxPrimeFactor);
+			return numberToTest;
 		}
 		if(numberToTest % aux == 0 && P000.isPrime( aux)){
-			return findLargestPrimeFactor(aux, aux+1, numberToTest/aux);
+			System.out.println(aux);
+			return P000.max(aux, findLargestPrimeFactor(aux, numberToTest/aux));
 		}
-		return findLargestPrimeFactor(maxPrimeFactor, aux+1, numberToTest);
+		return findLargestPrimeFactor(aux+1, numberToTest);
 	}
 	
 	

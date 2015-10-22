@@ -78,12 +78,12 @@ public class P000 {
 
 	/**
 	 * Largest number between two.
-	 * @param a number 1
-	 * @param b number 2
+	 * @param aux number 1
+	 * @param l number 2
 	 * @return max between number 1 and number 2
 	 */
-	public static int max(int a, int b){
-		return (a>b)? a : b;
+	public static long max(long aux, long l){
+		return (aux>l)? aux : l;
 	}
 
 	/**

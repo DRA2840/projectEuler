@@ -78,7 +78,7 @@ public class P014 {
 		if(index == RECURSIVE_MAX_VALUE){
 			return longestValue;
 		}
-		int size = collatzSequenceSize(0, index);
+		int size = collatzSequenceSize( index);
 		if( size > longestSize){
 			longestSize = size;
 			longestValue = index;
@@ -92,15 +92,14 @@ public class P014 {
 	/**
 	 * Collatz sequence size for a given number
 	 * 
-	 * @param size to be ripped off. starts with 0
 	 * @param value given number
 	 * @return Collatz sequence size for 'value'
 	 */
-	private static int collatzSequenceSize(int size, long value){
+	private static int collatzSequenceSize( long value){
 		if(value == 1){
-			return size;
+			return 0;
 		}
-		return collatzSequenceSize(++size, nextNumberCollatzSequence(value));
+		return 1+collatzSequenceSize( nextNumberCollatzSequence(value));
 	}
 	
 	/**

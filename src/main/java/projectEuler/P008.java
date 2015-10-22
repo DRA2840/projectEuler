@@ -57,7 +57,7 @@ public class P008 {
 	private static String[] array;
 	
 	public static void main(String[] args) {
-		System.out.println(greatestProduct(0,0,13));
+		System.out.println(calculateAnswer());
 	}
 	
 	/**
@@ -66,7 +66,7 @@ public class P008 {
 	 */
 	public static String calculateAnswer(){
 		splitter();
-		return String.valueOf(greatestProduct(0, 0, 13));
+		return String.valueOf(greatestProduct(0, 13));
 	}
 	
 	/**
@@ -79,18 +79,12 @@ public class P008 {
 	//TODO: Rip-off the auxiliary variable. use Max(a,b)
 	/**
 	 * Finds the greatest product between 'N' consecutive digits in that number
-	 * @param greatestProductSoFar auxiliary variable. Should start with 0
 	 * @param first position of first digit in the array. Should start with 0
 	 * @param offset 'N'
 	 * @return The greatest product between 'N' consecutive digits
 	 */
-	private static long greatestProduct(long greatestProductSoFar, int first, int offset){
-		if(first + offset == array.length){
-			return greatestProductSoFar;
-		}
-		long product = recursiveProduct(first, offset);
-		
-		return greatestProduct(((product > greatestProductSoFar)? product :greatestProductSoFar), first+1, offset);
+	private static long greatestProduct(int first, int offset){
+		return (first + offset == array.length)? -1: P000.max(recursiveProduct(first, offset), greatestProduct(first+1, offset));
 	}
 	
 	// Why use a FOR if you can write a recursive function that does the same thing?

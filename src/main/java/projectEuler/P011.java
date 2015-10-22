@@ -71,51 +71,52 @@ public class P011 {
 	 */
 	public static String calculateAnswer(){
 		splitter();
-		return String.valueOf(greatestProductAdjacentNumbers(0,0,0));
+		return String.valueOf(greatestProductAdjacentNumbers(0,0));
 	}
 	
 	/**
 	 * Calculates the greatest product between 4 adjacent numbers in this matrix
-	 * @param greatestProductSoFar auxiliary variable, Should start with 0
 	 * @param i position I
 	 * @param j position J
 	 * @return greatest product between 4 adjacent numbers
 	 */
-	private static int greatestProductAdjacentNumbers(int greatestProductSoFar, int i, int j){
+	private static long greatestProductAdjacentNumbers(int i, int j){
 		
 		if(j >= MATRIX_SIZE){
-			return greatestProductAdjacentNumbers(greatestProductSoFar, i+1, 0);
+			return greatestProductAdjacentNumbers(i+1, 0);
 		}
 		if(i >= MATRIX_SIZE){
-			return greatestProductSoFar;
+			return -1;
 		}
 		int aux = 0;
+		
+		long greatestProductInThisPosition = 0;
 		if(j+ 4 < MATRIX_SIZE){// Is line possible to calculate?
 			
 			aux = lineProduct(i,j, 4);
-			greatestProductSoFar = P000.max(greatestProductSoFar, aux);
+			greatestProductInThisPosition = P000.max(greatestProductInThisPosition, aux);
 			
 		}
 		if(i+4< MATRIX_SIZE){// Is column Possible?
 			
 			aux = columnProduct(i,j, 4);
-			greatestProductSoFar = P000.max(greatestProductSoFar, aux);
+			greatestProductInThisPosition = P000.max(greatestProductInThisPosition, aux);
 			
 		}
 		if(j+4 < MATRIX_SIZE && i+4 < MATRIX_SIZE){// Is diagonal Right possible?
 			
 			aux = diagRightProduct(i,j, 4);
-			greatestProductSoFar = P000.max(greatestProductSoFar, aux);
+			greatestProductInThisPosition = P000.max(greatestProductInThisPosition, aux);
 			
 		}
 		if(j-4 >= 0 && i+4 < MATRIX_SIZE){// Is diagonal Left possible?
 			
 			aux = diagLeftProduct(i,j, 4);
-			greatestProductSoFar = P000.max(greatestProductSoFar, aux);
+			greatestProductInThisPosition = P000.max(greatestProductInThisPosition, aux);
 			
 		}
 		
-		return greatestProductAdjacentNumbers(greatestProductSoFar, i, ++j);
+		return P000.max(greatestProductInThisPosition, greatestProductAdjacentNumbers(i, ++j));
 	}
 	
 	/**

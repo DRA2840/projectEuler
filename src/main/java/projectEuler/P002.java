@@ -24,21 +24,20 @@ public class P002 {
 	 * @return answer
 	 */
 	public static String calculateAnswer(){
-		return String.valueOf(sumOfEvenFibonacciNumbers(0, 0, 1));
+		return String.valueOf(sumOfEvenFibonacciNumbers(0, 1));
 	}
 	
 	/**
 	 * Sums all even Fibonacci numbers below the constant MAX (included)
-	 * @param sum the sum so far
 	 * @param last the last fibonacci number calculated
 	 * @param actual the actual fibonacci number
 	 * @return The sum of all even Fibonacci numbers until MAX (four million)
 	 */
-	private static int sumOfEvenFibonacciNumbers (int sum, int last, int actual){
+	private static int sumOfEvenFibonacciNumbers (int last, int actual){
 		if(actual > MAX){
-			return sum;
+			return 0;
 		}
-		return sumOfEvenFibonacciNumbers( ((isEven(actual))? sum+actual : sum), actual, actual + last );
+		return (isEven(actual)? actual : 0) + sumOfEvenFibonacciNumbers( actual, actual + last );
 	}
 	
 	/**
