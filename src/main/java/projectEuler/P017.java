@@ -13,62 +13,70 @@ package projectEuler;
  */
 public class P017 {
 	
+	private static String[] units = {"", "one ", "two ", "three ", "four ", "five ", "six ", "seven ", "eight ", "nine "};
+	private static String[] tens  = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+	private static String[] teens = {"ten ", "eleven ", "twelve ", "thirteen ", "fourteen ", "fifteen ", "sixteen ", "seventeen ", "eighteen ", "nineteen "};
+	
+	
 	public static void main(String[] args) {
+		System.out.println(prettyPrinter(1522));
 		System.out.println(calculateAnswer());
 	}
 	
+	/**
+	 * Calculates answer
+	 * @return answer
+	 */
 	public static String calculateAnswer(){
 		return sumsAllCharactersFromAllNumbersFromXToOne(1000).toString();
 	}
 	
+	/**
+	 * Sums the number of characters each number has in written form (British English) from
+	 * number 'X' until 1
+	 * @param x X
+	 * @return Sum of all the characters from all numbers from x to 1
+	 */
 	private static Integer sumsAllCharactersFromAllNumbersFromXToOne(int x){
 		return (x==0)?0: (numberOfCharacters(x) + sumsAllCharactersFromAllNumbersFromXToOne(x-1));
 	}
 	
-	//This works... but why not create a pretty printer, do a trim and creates an useful code?
-	private static int numberOfCharacters(Integer i){
-		if(i == 1000){
-			return "ONETHOUSAND".length();
-		}else if(i.toString().length() == 3){
-			int numCharTens = numberOfCharacters(Integer.valueOf(i.toString().substring(1)));
-			return numberOfCharactersUnits(Integer.valueOf(i.toString().substring(0, 1))) + "Hundred".length() + ((numCharTens == 0)? 0 : numCharTens + "AND".length());
-		}else if(i.toString().length() == 2){
-			return numberOfCharactersTens(i);
+	/**
+	 * Returns a String representing a number between 1 and 9999 in British English
+	 * 
+	 * @param i number to be 'Stringed'
+	 * @return The number in British English
+	 */
+	public static String prettyPrinter(Integer i){
+		int size = i.toString().length();
+		if(size == 4){
+			String hundreds = prettyPrinter(Integer.valueOf(i.toString().substring(1)));
+			return units[Integer.valueOf(i.toString().substring(0, 1))] + "thousand " + (hundreds.length() == 0 || hundreds.contains("hundred")? "": "and ") + hundreds;
 		}
-		
-		return numberOfCharactersUnits(i);
-	}
-
-	private static int numberOfCharactersTens(Integer i) {
-		char aux = i.toString().charAt(0);
-		int characters = 0;
-		if(aux == '1'){
-			if(i == 11 || i == 12){
-				return 6;
-			}else if(i == 10 || i == 13 || i == 15 || i == 18){
-				return 3 + numberOfCharactersUnits(Integer.valueOf(i.toString().substring(1)));
+		if(size == 3){
+			String tens = prettyPrinter(Integer.valueOf(i.toString().substring(1)));
+			return units[Integer.valueOf(i.toString().substring(0,1))] + "hundred " + (tens.length() > 0? ("and " + tens) : "");
+		}
+		if(size == 2){
+			if(i<20){
+				return teens[i-10];
 			}else{
-				return 4 + numberOfCharactersUnits(Integer.valueOf(i.toString().substring(1)));
+				String units = prettyPrinter(Integer.valueOf(i.toString().substring(1)));
+				return tens[Integer.valueOf(i.toString().substring(0, 1))] + (units.length() > 0 ? ("-" + units) : "");
 			}
-		}else if(aux == '2' || aux == '3' || aux == '8' || aux == '9'){
-			characters = 6;
-		}else if(aux == '4' || aux == '5' || aux == '6'){
-			characters = 5;
-		}else if(aux == '7'){
-			characters = 7;
 		}
-		return characters + numberOfCharactersUnits(Integer.valueOf(i.toString().substring(1)));
-	}
-
-	private static int numberOfCharactersUnits(Integer i) {
-		if(i == 1 || i == 2 || i == 6 ){
-			return 3;
-		}else if(i == 4 || i == 5 || i == 9){
-			return 4;
-		}else if(i == 3 || i == 7 || i == 8){
-			return 5;
+		if(size == 1){
+			return units[i];
 		}
-		return 0;
+		return "";
 	}
-
+	
+	/**
+	 * Calculates the number of characters a number has in British English
+	 * @param i number
+	 * @return number of characters
+	 */
+	private static int numberOfCharacters(Integer i){
+		return prettyPrinter(i).replace(" ", "").replace("-", "").length();
+	}
 }
